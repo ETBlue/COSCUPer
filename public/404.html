@@ -1,0 +1,234 @@
+
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <!-- Favicon-->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <!-- For iOS (TODO)-->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="apple-touch-icon-precomposed" href="img/app-icon/icon-60.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/app-icon/icon-76.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/app-icon/icon-60@2x.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/app-icon/icon-76@2x.png"/>
+    <!-- jquery-->
+    <script type="text/javascript" src="assets/jquery-2.1.3.min.js"></script>
+    <!-- semantic ui-->
+    <link rel="stylesheet" type="text/css" href="assets/semantic-ui/1.4.0/semantic.min.css"/>
+    <script type="text/javascript" src="assets/semantic-ui/1.4.0/semantic.min.js"></script>
+    <!-- handlebars-->
+    <script type="text/javascript" src="assets/handlebars-v2.0.0.js"></script>
+    <!-- underscore-->
+    <script type="text/javascript" src="assets/underscore-min.js"></script>
+    <!-- csv parser-->
+    <!--script(type="text/javascript",src="assets/csv.js")-->
+    <!-- custom-->
+    <link rel="stylesheet" href="css/global.css"/>
+    <script type="text/javascript" src="js/global.js"></script>
+    <!-- for mobile, responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>COSCUPer 個資中心
+    </title>
+  </head>
+  <body>
+    <nav id="topbar">
+      <div class="wrapper">
+        <div class="ui borderless menu"><a href="index" class="active item">COSCUPer 2015</a><a data-name="工作人員" class="item">工作人員
+            <div class="ui small label">10</div></a><a data-name="講者" class="item">講者
+            <div class="ui small label">10</div></a><a data-name="贊助商" class="item">贊助商
+            <div class="ui small label">10</div></a><a data-name="外包廠商" class="item">外包廠商
+            <div class="ui small label">10</div></a>
+          <div class="right menu">
+            <div class="item">
+              <div class="ui icon input">
+                <input placeholder="搜尋..." type="text"/><i class="icon search"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <nav id="submenu">
+      <div class="wrapper">
+        <div data-name="工作人員" class="ui secondary pointing menu"><a data-name="召喚" class="item">召喚
+            <div class="ui small label">10</div></a><a data-name="議程" class="item">議程
+            <div class="ui small label">10</div></a><a data-name="行政" class="item">行政
+            <div class="ui small label">10</div></a><a data-name="場務" class="item">場務
+            <div class="ui small label">10</div></a><a data-name="線路" class="item">線路
+            <div class="ui small label">10</div></a><a data-name="紀錄" class="item">紀錄
+            <div class="ui small label">10</div></a><a data-name="行銷" class="item">行銷
+            <div class="ui small label">10</div></a><a data-name="銷售" class="item">銷售
+            <div class="ui small label">10</div></a></div>
+        <div data-name="講者" class="ui secondary pointing menu"><a data-name="XX軌" class="item">XX軌
+            <div class="ui small label">10</div></a><a data-name="XX軌" class="item">XX軌
+            <div class="ui small label">10</div></a><a data-name="XX軌" class="item">XX軌
+            <div class="ui small label">10</div></a></div>
+        <div data-name="贊助商" class="ui secondary pointing menu"><a data-name="白金級" class="item">白金級
+            <div class="ui small label">10</div></a><a data-name="XX級" class="item">XX級
+            <div class="ui small label">10</div></a><a data-name="XX級" class="item">XX級
+            <div class="ui small label">10</div></a></div>
+      </div>
+    </nav>
+    <nav id="thirdmenu">
+      <div class="wrapper">
+        <div data-name="召喚" class="menu"><a data-name="總召喚" class="ui label">總召喚人
+            <div class="detail">1</div></a><a data-name="副召喚" class="ui label">副召喚人
+            <div class="detail">3</div></a></div>
+        <div data-name="議程" class="menu"><a data-name="議程委員" class="ui label">委員
+            <div class="detail">10</div></a></div>
+        <div data-name="行政" class="menu"><a data-name="行政組長" class="ui label">組長
+            <div class="detail">1</div></a><a data-name="行政副組長" class="ui label">副組長
+            <div class="detail">2</div></a><a data-name="行政組員" class="ui label">組員
+            <div class="detail">10</div></a></div>
+        <div data-name="場務" class="menu"><a data-name="場務組長" class="ui label">組長
+            <div class="detail">1</div></a><a data-name="場務副組長" class="ui label">副組長
+            <div class="detail">2</div></a><a data-name="場務組員" class="ui label">組員
+            <div class="detail">10</div></a></div>
+        <div data-name="線路" class="menu"><a data-name="線路組長" class="ui label">組長
+            <div class="detail">1</div></a><a data-name="線路副組長" class="ui label">副組長
+            <div class="detail">2</div></a><a data-name="線路組員" class="ui label">組員
+            <div class="detail">10</div></a></div>
+        <div data-name="紀錄" class="menu"><a data-name="紀錄組長" class="ui label">組長
+            <div class="detail">1</div></a><a data-name="紀錄副組長" class="ui label">副組長
+            <div class="detail">2</div></a><a data-name="紀錄組員" class="ui label">組員
+            <div class="detail">10</div></a></div>
+        <div data-name="行銷" class="menu"><a data-name="行銷組長" class="ui label">組長
+            <div class="detail">1</div></a><a data-name="行銷副組長" class="ui label">副組長
+            <div class="detail">2</div></a><a data-name="行銷組員" class="ui label">組員
+            <div class="detail">10</div></a></div>
+        <div data-name="銷售" class="menu"><a data-name="銷售組長" class="ui label">組長
+            <div class="detail">1</div></a><a data-name="銷售副組長" class="ui label">副組長
+            <div class="detail">2</div></a><a data-name="銷售組員" class="ui label">組員
+            <div class="detail">10</div></a></div>
+      </div>
+    </nav>
+    <section id="list">
+      <div class="wrapper">
+        <div class="ui two column stackable grid">
+          <div data-tag="行政組長 議程委員" class="column">
+            <div class="ui segment">
+              <div class="tag"><a data-name="行政組長" class="ui label">行政組長
+                  <div class="detail">1</div></a><a data-name="議程委員" class="ui label">議程委員
+                  <div class="detail">5</div></a></div>
+              <div class="ui header">Bobchao</div>
+              <div data-name="聯絡方式" class="ui horizontal list">
+                <div class="item"><i class="icon mail"></i>xxx@gmail.com</div>
+                <div class="item"><i class="icon call"></i>0900000000</div>
+                <div class="item"><i class="icon facebook"></i>id</div>
+                <div class="item"><i class="icon twitter"></i>id</div>
+              </div>
+              <div data-name="選項" class="ui horizontal list">
+                <div class="item">
+                  <div class="ui small label">T shirt</div>男 L
+                </div>
+                <div class="item">
+                  <div class="ui small label">飲食</div>一般
+                </div>
+                <div class="item">
+                  <div class="ui small label">住宿</div>1/1 , 1/2
+                </div>
+              </div>
+              <p>
+                <div class="ui small label">備註</div>有 cosplay 傾向
+              </p>
+            </div>
+          </div>
+          <div data-tag="行政組長 議程委員" class="column">
+            <div class="ui segment">
+              <div class="tag"><a data-name="行政組長" class="ui label">行政組長
+                  <div class="detail">1</div></a><a data-name="議程委員" class="ui label">議程委員
+                  <div class="detail">10</div></a></div>
+              <div class="ui header">Bobchao</div>
+              <div data-name="聯絡方式" class="ui horizontal list">
+                <div class="item"><i class="icon mail"></i>xxx@gmail.com</div>
+                <div class="item"><i class="icon call"></i>0900000000</div>
+                <div class="item"><i class="icon facebook"></i>id</div>
+                <div class="item"><i class="icon twitter"></i>id</div>
+              </div>
+              <div data-name="選項" class="ui horizontal list">
+                <div class="item">
+                  <div class="ui small label">T shirt</div>男 L
+                </div>
+                <div class="item">
+                  <div class="ui small label">飲食</div>一般
+                </div>
+                <div class="item">
+                  <div class="ui small label">住宿</div>1/1 , 1/2
+                </div>
+              </div>
+              <p>
+                <div class="ui small label">備註</div>有 cosplay 傾向
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="bottombar">
+      <div class="wrapper">
+        <div class="ui borderless menu"><a target="_blank" href="" class="ui button item"><i class="icon trello"></i>trello</a><a target="_blank" href="" class="ui button item"><i class="icon google"></i>groups</a><a target="_blank" href="" class="ui button item"><i class="icon google"></i>drive</a>
+          <div class="right menu"><a target="_blank" href="https://github.com/ETBlue/COSCUPer" class="item"><i class="icon code"></i>本站程式碼與授權</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      $(document).ready(function(){
+      
+        // step 0: setup
+        
+        // step 1: get data and render projects
+        
+        $.getJSON("json/entry-list.json", function(entries){
+        
+        }).done(function(){
+        
+          // step 2: build parent-child relationship
+          
+          // step 3-1: build filters
+          
+          // step 3-2: add interactions
+          
+          var tags = {
+            "工作人員": ["召喚","議程","行政","場務","線路","紀錄","行銷","銷售"],
+            "講者": ["XX軌","XX軌","XX軌"],
+            "贊助商": ["白金級","XX級","XX級"],
+          };
+          
+          var reset_submenu = function(){
+            $('#submenu .wrapper>.menu').slideUp();
+            $('#submenu .item').removeClass('active');
+          };
+          var reset_thirdmenu = function(){
+            $('#thirdmenu .wrapper>.menu').slideUp();
+            $('#thirdmenu .label').removeClass('black');
+          };
+          $('#topbar .item').on('click tap', function(){
+            $('#topbar .item').removeClass('active');
+            $(this).addClass('active');
+            reset_submenu();
+            reset_thirdmenu();
+            var submenu = $(this).attr("data-name");
+            $('#submenu .wrapper>.menu[data-name="'+submenu+'"]').slideDown();
+          });
+          
+          $('#submenu .item').on('click tap', function(){
+            $('#submenu .item').removeClass('active');
+            $(this).addClass('active');
+            reset_thirdmenu();
+            var thirdmenu = $(this).attr("data-name");
+            $('#thirdmenu .wrapper>.menu[data-name="'+thirdmenu+'"]').slideDown();
+          });
+          
+          $('#thirdmenu .label').on('click tap', function(){
+            $('#thirdmenu .label').removeClass('black');
+            $(this).addClass('black');
+          });
+          
+        });
+        
+      });
+      
+    </script>
+  </body>
+</html>
