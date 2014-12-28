@@ -110,12 +110,23 @@
               <div class="tag"><a data-name="行政組長" class="ui label">行政組長
                   <div class="detail">1</div></a><a data-name="議程委員" class="ui label">議程委員
                   <div class="detail">5</div></a></div>
-              <div class="ui header">Bobchao</div>
-              <div data-name="聯絡方式" class="ui horizontal list">
+              <div class="ui header">柏強</div>
+              <div data-name="名稱" class="ui horizontal list">
+                <div class="item">
+                  <div class="ui label">irc</div>bobchao
+                </div>
+                <div class="item">
+                  <div class="ui label">姓名</div>趙柏強
+                </div>
+              </div>
+              <div data-name="社交帳號" class="ui horizontal list">
                 <div class="item"><i class="icon mail"></i>xxx@gmail.com</div>
                 <div class="item"><i class="icon call"></i>0900000000</div>
+              </div>
+              <div data-name="社交帳號" class="ui horizontal list">
                 <div class="item"><i class="icon facebook"></i>id</div>
                 <div class="item"><i class="icon twitter"></i>id</div>
+                <div class="item"><i class="icon github"></i>id</div>
               </div>
               <div data-name="選項" class="ui horizontal list">
                 <div class="item">
@@ -125,7 +136,10 @@
                   <div class="ui small label">飲食</div>一般
                 </div>
                 <div class="item">
-                  <div class="ui small label">住宿</div>1/1 , 1/2
+                  <div class="ui small label">住宿</div>No
+                </div>
+                <div class="item">
+                  <div class="ui small label">訂房資訊</div><i class="icon lock"></i>
                 </div>
               </div>
               <p>
@@ -135,29 +149,42 @@
           </div>
           <div data-tag="行政組長 議程委員" class="column">
             <div class="ui segment">
-              <div class="tag"><a data-name="行政組長" class="ui label">行政組長
-                  <div class="detail">1</div></a><a data-name="議程委員" class="ui label">議程委員
+              <div class="tag"><a data-name="行政組員" class="ui label">行政組員
                   <div class="detail">10</div></a></div>
-              <div class="ui header">Bobchao</div>
+              <div class="ui header">lora</div>
+              <div data-name="名稱" class="ui horizontal list">
+                <div class="item">
+                  <div class="ui label">irc</div>shadowcrow
+                </div>
+                <div class="item">
+                  <div class="ui label">姓名</div><i class="icon lock"></i>
+                </div>
+              </div>
               <div data-name="聯絡方式" class="ui horizontal list">
-                <div class="item"><i class="icon mail"></i>xxx@gmail.com</div>
-                <div class="item"><i class="icon call"></i>0900000000</div>
+                <div class="item"><i class="icon mail"></i><i class="icon lock"></i></div>
+                <div class="item"><i class="icon call"></i><i class="icon lock"></i></div>
+              </div>
+              <div data-name="社交帳號" class="ui horizontal list">
                 <div class="item"><i class="icon facebook"></i>id</div>
                 <div class="item"><i class="icon twitter"></i>id</div>
+                <div class="item"><i class="icon github"></i>id</div>
               </div>
               <div data-name="選項" class="ui horizontal list">
                 <div class="item">
-                  <div class="ui small label">T shirt</div>男 L
+                  <div class="ui small label">T shirt</div>女 L
                 </div>
                 <div class="item">
-                  <div class="ui small label">飲食</div>一般
+                  <div class="ui small label">飲食</div>素<i class="icon asterisk green"></i>
                 </div>
                 <div class="item">
-                  <div class="ui small label">住宿</div>1/1 , 1/2
+                  <div class="ui small label">住宿</div>Yes<i class="icon checkmark green"></i>
+                </div>
+                <div class="item">
+                  <div class="ui small label">訂房資訊</div><i class="icon lock"></i>
                 </div>
               </div>
               <p>
-                <div class="ui small label">備註</div>有 cosplay 傾向
+                <div class="ui small label">備註</div><i class="icon lock"></i>
               </p>
             </div>
           </div>
@@ -177,9 +204,16 @@
       
         // step 0: setup
         
+        var tags = {
+          "工作人員": ["召喚","議程","行政","場務","線路","紀錄","行銷","銷售"],
+          "講者": ["XX軌","XX軌","XX軌"],
+          "贊助商": ["白金級","XX級","XX級"],
+        };
+        
         // step 1: get data and render projects
         
-        $.getJSON("json/staff-list.json", function(entries){
+        $.getJSON("json/staff-list.json", function(staff){
+        
         
         }).done(function(){
         
@@ -188,12 +222,6 @@
           // step 3-1: build filters
           
           // step 3-2: add interactions
-          
-          var tags = {
-            "工作人員": ["召喚","議程","行政","場務","線路","紀錄","行銷","銷售"],
-            "講者": ["XX軌","XX軌","XX軌"],
-            "贊助商": ["白金級","XX級","XX級"],
-          };
           
           var reset_submenu = function(){
             $('#submenu .wrapper>.menu').slideUp();
