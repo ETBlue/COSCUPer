@@ -127,19 +127,30 @@ block body
                 .detail 1
               a.ui.label(data-name="議程委員") 議程委員
                 .detail 5
-            .ui.header Bobchao
-            .ui.horizontal.list(data-name="聯絡方式")
+            .ui.header 柏強
+            .ui.horizontal.list(data-name="名稱")
+              .item
+                .ui.label irc
+                | bobchao
+              .item
+                .ui.label 姓名
+                | 趙柏強
+            .ui.horizontal.list(data-name="社交帳號")
               .item
                 i.icon.mail
                 | xxx@gmail.com
               .item
                 i.icon.call
                 | 0900000000
+            .ui.horizontal.list(data-name="社交帳號")
               .item
                 i.icon.facebook
                 | id
               .item
                 i.icon.twitter
+                | id
+              .item
+                i.icon.github
                 | id
             .ui.horizontal.list(data-name="選項")
               .item
@@ -150,44 +161,62 @@ block body
                 | 一般
               .item
                 .ui.small.label 住宿
-                | 1/1 , 1/2
+                | No
+              .item
+                .ui.small.label 訂房資訊
+                i.icon.lock
             p
               .ui.small.label 備註
               | 有 cosplay 傾向
         .column(data-tag="行政組長 議程委員")
           .ui.segment
             .tag
-              a.ui.label(data-name="行政組長") 行政組長
-                .detail 1
-              a.ui.label(data-name="議程委員") 議程委員
+              a.ui.label(data-name="行政組員") 行政組員
                 .detail 10
-            .ui.header Bobchao
+            .ui.header lora
+            .ui.horizontal.list(data-name="名稱")
+              .item
+                .ui.label irc
+                | shadowcrow
+              .item
+                .ui.label 姓名
+                i.icon.lock
             .ui.horizontal.list(data-name="聯絡方式")
               .item
                 i.icon.mail
-                | xxx@gmail.com
+                i.icon.lock
               .item
                 i.icon.call
-                | 0900000000
+                i.icon.lock
+            .ui.horizontal.list(data-name="社交帳號")
               .item
                 i.icon.facebook
                 | id
               .item
                 i.icon.twitter
                 | id
+              .item
+                i.icon.github
+                | id
             .ui.horizontal.list(data-name="選項")
               .item
                 .ui.small.label T shirt
-                | 男 L
+                | 女 L
               .item
                 .ui.small.label 飲食
-                | 一般
+                | 素
+                i.icon.asterisk.green
               .item
                 .ui.small.label 住宿
-                | 1/1 , 1/2
+                | Yes
+                i.icon.checkmark.green
+              .item
+                .ui.small.label 訂房資訊
+                i.icon.lock
             p
               .ui.small.label 備註
-              | 有 cosplay 傾向
+              i.icon.lock
+
   
 
   footer#bottombar
@@ -217,9 +246,16 @@ block script
 
       // step 0: setup
 
+      var tags = {
+        "工作人員": ["召喚","議程","行政","場務","線路","紀錄","行銷","銷售"],
+        "講者": ["XX軌","XX軌","XX軌"],
+        "贊助商": ["白金級","XX級","XX級"],
+      };
+
       // step 1: get data and render projects
 
-      $.getJSON("json/staff-list.json", function(entries){
+      $.getJSON("json/staff-list.json", function(staff){
+
 
       }).done(function(){
 
@@ -228,12 +264,6 @@ block script
         // step 3-1: build filters
 
         // step 3-2: add interactions
-
-        var tags = {
-          "工作人員": ["召喚","議程","行政","場務","線路","紀錄","行銷","銷售"],
-          "講者": ["XX軌","XX軌","XX軌"],
-          "贊助商": ["白金級","XX級","XX級"],
-        };
 
         var reset_submenu = function(){
           $('#submenu .wrapper>.menu').slideUp();
